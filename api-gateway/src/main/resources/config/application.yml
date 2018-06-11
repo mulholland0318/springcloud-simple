@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: api-gateway
+zuul:
+  routes:
+    uaa:
+      path: /uaa/**
+      serviceId: auth-server
+      sensitiveHeaders:
+    order:
+      path: /order/**
+      serviceId: order-service
+      sensitiveHeaders:
+  add-proxy-headers: true
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8080/uaa/user
+      prefer-token-info: false
+    client:
+      access-token-uri: http://localhost:8080/uaa/oauth/token
+      user-authorization-uri: http://localhost:8080/uaa/oauth/authorize
+      client-id: webapp
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${server.port}
+    appname: ${spring.application.name}
+  client:
+    service-url:
+      defaultZone: http://zhangsan:zhangsan@localhost:8089/eureka/,http://lisi:lisi@localhost:8090/eureka/,http://wangwu:wangwu@localhost:8091/eureka/
+    fetch-registry: true
+    register-with-eureka: true

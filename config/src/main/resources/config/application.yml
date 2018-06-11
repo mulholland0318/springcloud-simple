@@ -1,0 +1,47 @@
+server:
+  port: 8888
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: root
+#  profiles:
+#    active: native
+  cloud:
+    config:
+      fail-fast: true
+      server:
+#        native:
+#          search-locations: classpath:/config/
+        git:
+          uri: https://github.com/mulholland0318/mdcproject
+          password: github1986
+          default-label: master
+          username: mulholland0318
+          search-paths: /**
+  application:
+    name: config-server
+#服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhangsan:zhangsan@master:8089/eureka/,http://lisi:lisi@backTwo:8090/eureka/,http://wangwu:wangwu@backThree:8091/eureka/
+    fetch-registry: false
+    register-with-eureka: true
+  instance:
+    instance-id: ${spring.application.name}-${server.port}
+    hostname: ${spring.application.name}
+    appname: ${spring.application.name}
+##配置加解密
+#jasypt:
+#  encryptor:
+#    algorithm: PBEWithMD5AndDES
+#    password: foo
+#encrypt:
+#  key-store:
+#    password: letmein
+#    secret: changeme
+#    location: classpath:/server.jks
+#    alias: mytestkey
+#  key: mykey

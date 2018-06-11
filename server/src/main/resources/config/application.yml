@@ -1,0 +1,86 @@
+spring:
+  security:
+    user:
+      name: zhangsan
+      password: zhangsan
+  application:
+    name: server
+  profiles: master
+
+server:
+  port: 8089
+eureka:
+  instance:
+    #hostname: ${spring.application.name}
+    preferIpAddress: true #false不使用ip地址注册
+    appname: ${spring.application.name}
+#    health-check-url-path: ${management.context-path}/health
+#    status-page-url-path: ${management.context-path}/info
+    lease-expiration-duration-in-seconds: 8
+    lease-renewal-interval-in-seconds: 4
+  client:
+    service-url:
+      defaultZone: http://lisi:lisi@localhost:8090/eureka,http://wangwu:wangwu@localhost:8091/eureka
+    register-with-eureka: true #注册自己
+    fetch-registry: true
+  server:
+    enable-self-preservation: false #出现不良服务时，剔除服务
+    eviction-interval-timer-in-ms: 4000  #eureka服务清理间隔（单位毫秒）
+logging:
+  level:
+    org.springframework.web: INFO
+  file: /log/logs.log
+
+---
+
+server:
+  port: 8090
+spring:
+  application:
+    name: server
+  security:
+    user:
+      name: lisi
+      password: lisi
+  profiles: backone
+eureka:
+  instance:
+#    lease-renewal-interval-in-seconds: 30  #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒
+#    lease-expiration-duration-in-seconds: 90  #Eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒
+    hostname: ${spring.application.name}
+    appname: ${spring.application.name}
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://zhangsan:zhangsan@localhost:8089/eureka,http://wangwu:wangwu@localhost:8091/eureka
+    register-with-eureka: true
+    fetch-registry: true
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 4000
+
+---
+
+server:
+  port: 8091
+spring:
+  application:
+    name: server
+  profiles: backtwo
+  security:
+    user:
+      name: wangwu
+      password: wangwu
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    hostname: ${spring.application.name}
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://zhangsan:zhangsan@localhost:8089/eureka,http://lisi:lisi@localhost:8090/eureka
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 4000

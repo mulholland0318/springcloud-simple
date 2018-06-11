@@ -1,0 +1,22 @@
+server:
+  port: 5666
+spring:
+  application:
+    name: config-client-refresh
+  cloud:
+    config:
+      name: mdachu
+      profile: configuration
+      discovery:
+        enabled: true
+        service-id: config-server
+      label: master
+eureka:
+  instance:
+    hostname: localhost-${server.port}
+    instance-id: ${eureka.instance.hostname}-${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8089/eureka/,http://localhost:8090/eureka/,http://localhost:8091/eureka/
+    fetch-registry: true
+    register-with-eureka: false

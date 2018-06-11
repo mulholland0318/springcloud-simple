@@ -1,0 +1,44 @@
+server:
+  port: 8501
+spring:
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+  application:
+    name: auth-server
+  datasource:
+    platform: all
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/authserver?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+  redis:
+    host: localhost
+    database: 1
+
+  data:
+    mongodb:
+      uri: mongodb://localhost/test
+      port: 27017
+      username: root
+      password: root
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhangsan:zhangsan@localhost:8089/eureka/,http://lisi:lisi@localhost:8090/eureka/,http://wangwu:wangwu@localhost:8091/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+    appname: ${spring.application.name}
+    instance-id: ${spring.application.name}-${server.port}
+security:
+  oauth2:
+    resource:
+      id: order-service
+      user-info-uri:  http://localhost:8080/uaa/user
+      prefer-token-info: false
+logging.level.org.springframework.security: DEBUG
+
+logging.leve.org.springframework: DEBUG

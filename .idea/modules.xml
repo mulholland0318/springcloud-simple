@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/authorization-server/authorization-server.iml" filepath="$PROJECT_DIR$/authorization-server/authorization-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backconfig/backconfig.iml" filepath="$PROJECT_DIR$/backconfig/backconfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config/config.iml" filepath="$PROJECT_DIR$/config/config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configclient/configclient.iml" filepath="$PROJECT_DIR$/configclient/configclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configclientrefresh/configclientrefresh.iml" filepath="$PROJECT_DIR$/configclientrefresh/configclientrefresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mdachu-feign/mdachu-feign.iml" filepath="$PROJECT_DIR$/mdachu-feign/mdachu-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mdachu-springcloud.iml" filepath="$PROJECT_DIR$/mdachu-springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mdachu-zuul/mdachu-zuul.iml" filepath="$PROJECT_DIR$/mdachu-zuul/mdachu-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mdachu_manager/mdachu_manager.iml" filepath="$PROJECT_DIR$/mdachu_manager/mdachu_manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-module/order-module.iml" filepath="$PROJECT_DIR$/order-module/order-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-service/order-service.iml" filepath="$PROJECT_DIR$/order-service/order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server/server.iml" filepath="$PROJECT_DIR$/server/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serverThree/serverThree.iml" filepath="$PROJECT_DIR$/serverThree/serverThree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/serverTwo/serverTwo.iml" filepath="$PROJECT_DIR$/serverTwo/serverTwo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-a/service-a.iml" filepath="$PROJECT_DIR$/service-a/service-a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-b/service-b.iml" filepath="$PROJECT_DIR$/service-b/service-b.iml" />
+    </modules>
+  </component>
+</project>

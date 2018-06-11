@@ -1,0 +1,21 @@
+server:
+  port: 7777
+spring:
+  application:
+    name: mdachu-feign
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    instance-id: ${spring.application.name}:${server.port}
+    hostname: ${spring.application.name}
+  client:
+    service-url:
+      defaultZone: http://zhangsan:zhangsan@localhost:8089/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+turbine:
+  app-config: mdachu-feign
+  cluster-name-expression: new String("default")
+
+
+

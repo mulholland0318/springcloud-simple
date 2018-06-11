@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: server
+  security:
+    user:
+      name: lisi
+      password: lisi
+server:
+  port: 8091
+eureka:
+  instance:
+    #hostname: server-three
+    prefer-ip-address: true
+    appname: ${spring.application.name}
+    lease-expiration-duration-in-seconds: 8
+    lease-renewal-interval-in-seconds: 8
+  client:
+    fetch-registry: true
+    register-with-eureka: true #
+    service-url:
+      defaultZone: http://wangwu:wangwu@localhost:8090/eureka/,http://zhangsan:zhangsan@localhost:8089/eureka/
+  server:
+    enableSelfPreservation: false #关闭自我保护，出现不良服务是提出服务
+    eviction-interval-timer-in-ms: 4000 #eureka服务清理间隔（单位毫秒）
+

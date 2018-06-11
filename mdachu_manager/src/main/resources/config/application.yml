@@ -1,0 +1,14 @@
+server:
+  port: 80
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: mdachu-manager
+  data.
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://zhangsan:zhangsan@localhost:8089/eureka/,http://localhost:8090/eureka/,http://localhost:8091/eureka

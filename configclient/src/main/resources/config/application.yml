@@ -1,0 +1,38 @@
+server:
+  port: 2222
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #自定义ribbon的负载均衡策略
+spring:
+  application:
+    name: ribbonServer
+  config:
+    name: mdachu
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true
+      name: application
+      label: master
+      profile: dev
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: root
+eureka:
+  instance:
+    hostname: ${spring.application.name}
+    appname: ${spring.application.name}
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://zhangsan:zhangsan@localhost:8089/eureka/,http://lisi:lisi@localhost:8090/eureka/,http://wangwu:wangwu@localhost:8091/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+#jasypt:
+#  encryptor:
+#    password: foo
+#    algorithm: PBEWithMD5AndDES
+
+

@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: order-service
+security:
+  oauth2:
+    resource:
+      prefer-token-info: false
+      id: order-service
+      user-info-uri: http://localhost:8080/uaa/user
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    instance-id: ${spring.application.name}-${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://zhangsan:zhangsan@localhost:8089/eureka/,http://lisi:lisi@localhost:8090/eureka/,http://wangwu:wangwu@localhost:8091/eureka/
+    fetch-registry: true
+    register-with-eureka: true

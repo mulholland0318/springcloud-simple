@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api-gateway" />
+        <module name="authorization-server" />
+        <module name="backconfig" />
+        <module name="common" />
+        <module name="config" />
+        <module name="configclient" />
+        <module name="configclientrefresh" />
+        <module name="mdachu-feign" />
+        <module name="mdachu-springcloud" />
+        <module name="mdachu-zuul" />
+        <module name="mdachu_manager" />
+        <module name="order-module" />
+        <module name="order-service" />
+        <module name="server" />
+        <module name="serverThree" />
+        <module name="serverTwo" />
+        <module name="service-a" />
+        <module name="service-b" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="1.8" />
+      <module name="authorization-server" target="1.8" />
+      <module name="backconfig" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="config" target="1.8" />
+      <module name="configclient" target="1.8" />
+      <module name="configclientone" target="1.8" />
+      <module name="configclientrefresh" target="1.8" />
+      <module name="configone" target="1.8" />
+      <module name="configtwo" target="1.8" />
+      <module name="mdachu-feign" target="1.8" />
+      <module name="mdachu-springcloud" target="1.8" />
+      <module name="mdachu-zuul" target="1.8" />
+      <module name="mdachu_manager" target="1.8" />
+      <module name="order-module" target="1.8" />
+      <module name="order-service" target="1.8" />
+      <module name="server" target="1.8" />
+      <module name="serverThree" target="1.8" />
+      <module name="serverTwo" target="1.8" />
+      <module name="service-a" target="1.8" />
+      <module name="service-b" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
